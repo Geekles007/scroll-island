@@ -1,15 +1,9 @@
 'use client';
 
 import { cn } from '@/utils';
-import React, { HTMLAttributes, PropsWithChildren, memo } from 'react';
-import CircularProgress from '../atoms/circular-progress';
-import { ChevronDown } from 'lucide-react';
-import Tag from '../atoms/tag';
+import React, { PropsWithChildren, memo } from 'react';
 import useScrollPercentage from '@/hooks/useScrollPercentage';
-import NumberFlow from '@number-flow/react';
 import { motion } from 'framer-motion';
-import useMeasure from 'react-use-measure';
-import { parseMarkdownSummary } from '@/helpers';
 import useOutsideClick from '@/hooks/useOutsideClick';
 import IslandTop from '../molecules/island-top';
 import { TSelected } from '../templates/island';

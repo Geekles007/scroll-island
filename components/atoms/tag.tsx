@@ -1,6 +1,6 @@
 import { cn } from '@/utils';
 import { motion } from 'framer-motion';
-import React, { HTMLAttributes, PropsWithChildren } from 'react';
+import React, { PropsWithChildren } from 'react';
 
 type TagProps = PropsWithChildren & {
   className?: string;

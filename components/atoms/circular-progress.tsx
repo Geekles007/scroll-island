@@ -7,11 +7,7 @@ type CircularProgressProps = {
   value: number;
 };
 
-const CircularProgress = ({
-  value = 0,
-  className,
-  ...props
-}: CircularProgressProps) => {
+const CircularProgress = ({ value = 0, className }: CircularProgressProps) => {
   return (
     <motion.div layout className={cn('relative size-5', className)}>
       <svg
