@@ -87,4 +87,6 @@ const IslandTop = forwardRef(
   }
 );
 
+IslandTop.displayName = 'IslandTop';
+
 export default IslandTop;
