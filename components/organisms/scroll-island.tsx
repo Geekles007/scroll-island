@@ -52,7 +52,7 @@ const ScrollIsland = ({
         className={cn(
           'relative flex flex-col gap-2',
           className,
-          open ? 'w-[350px] p-4' : 'w-[280px] p-1'
+          open ? 'w-[350px] p-4' : 'w-[285px] p-1'
         )}
         ref={ref}
       >
