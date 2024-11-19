@@ -41,7 +41,7 @@ const SummaryPanel = ({
 
   return (
     <motion.div
-      className='w-[350px] py-2'
+      className='w-full py-2'
       animate={{ opacity: 1, transition: { delay: 0.2 } }}
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}

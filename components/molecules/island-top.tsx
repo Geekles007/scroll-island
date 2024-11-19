@@ -49,15 +49,14 @@ const IslandTop = forwardRef(
       <motion.div
         onClick={onClick}
         ref={ref}
-        whileTap={{ scale: 0.9 }}
         className={cn(
-          'flex w-full items-center justify-between gap-2 self-start',
+          'flex w-full items-center justify-between gap-6 self-start',
           className
         )}
       >
         <div className='flex items-center gap-2'>
           <CircularProgress value={scrollPercentage} />
-          <div className='flex h-5 min-w-20 max-w-60 items-center gap-1 overflow-hidden font-semibold text-white'>
+          <div className='flex h-5 min-w-20 max-w-44 items-center gap-1 overflow-hidden font-semibold text-white'>
             <AnimatePresence mode={'popLayout'}>
               <motion.p
                 layout

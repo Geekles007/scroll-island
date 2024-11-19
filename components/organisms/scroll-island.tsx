@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import useOutsideClick from '@/hooks/useOutsideClick';
 import IslandTop from '../molecules/island-top';
 import { TSelected } from '../templates/island';
+import useMeasure from 'react-use-measure';
 
 type ScrollIslandProps = PropsWithChildren & {
   open?: boolean;
@@ -25,30 +26,35 @@ const ScrollIsland = ({
   open,
 }: ScrollIslandProps) => {
   const scrollPercentage = useScrollPercentage();
+  const [ref, { width, height }] = useMeasure();
   const containerRef = React.useRef<HTMLDivElement>(null);
 
-  useOutsideClick(containerRef, () => {
-    if (open) {
-      onClick?.();
-    }
-  });
+  console.log(width, height);
 
   return (
     <motion.div
-      layout
-      layoutId={layoutId}
       ref={containerRef}
-      className={cn(`cursor-pointer overflow-hidden bg-slate-900 `)}
+      className={cn(`cursor-pointer overflow-hidden bg-slate-900 shadow-sm `)}
       style={{
         borderRadius: '16px',
+      }}
+      transition={{
+        type: 'spring',
+        stiffness: 100, // Contrôle la raideur du rebond
+        damping: 18, // Contrôle la vitesse de l'arrêt
+      }}
+      animate={{
+        width,
+        height,
       }}
     >
       <div
         className={cn(
           'relative flex flex-col gap-2',
           className,
-          open ? 'p-4' : 'p-1'
+          open ? 'w-[350px] p-4' : 'w-[280px] p-1'
         )}
+        ref={ref}
       >
         <IslandTop
           onClick={onClick}
